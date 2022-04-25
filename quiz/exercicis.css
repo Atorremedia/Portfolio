@@ -1,0 +1,12 @@
+#container{
+	display: flex;
+	flex-wrap: wrap;
+	height: 400px;
+	widows: 400px;
+	background-color: lightblue;
+}
+#text1{
+	display: inline block;
+	margin: 3px;
+	padding: 2px;
+}
