@@ -773,6 +773,27 @@ svg.active .svg2-elem-14 {
         width: 120px;
         text-align: center;
     }
+    .parallax {
+        height: 50vh;
+    }
+    .layer {
+        width: 90%;
+        row-gap: 0;
+        column-gap: 0;
+    }
+    .layer1 {
+        top: 10vh;
+    }
+    .layer2 {
+        top: 20vh;
+    }
+    .layer3 {
+        top: 25vh;
+    }
+
+    .svg-container1 {
+        top: 70px;
+    }
   }
   @media (min-width: 1000px) {
     .burguer-container {
