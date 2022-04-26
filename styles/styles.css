@@ -247,7 +247,6 @@ side {
     background-repeat: no-repeat;
     width: 250px;
     height: 350px;
-    border-radius: 0 0 50% 50%;
     overflow: hidden;
 }
 .intro {
