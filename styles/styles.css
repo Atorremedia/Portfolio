@@ -329,7 +329,7 @@ footer {
 .card-right {
     width: 350px;
     height: 250px;
-    margin: auto;
+    margin-left: auto;
     background-position: center;
     background-size: cover;
 }
@@ -773,6 +773,7 @@ svg.active .svg2-elem-14 {
         width: 120px;
         text-align: center;
     }
+
     .parallax {
         height: 50vh;
     }
@@ -795,7 +796,12 @@ svg.active .svg2-elem-14 {
         top: 70px;
     }
   }
-  @media (min-width: 1000px) {
+@media (max-width: 1500px) {
+  .card-right {
+    margin: auto;
+}
+}
+@media (min-width: 1500px) {
     .burguer-container {
       display: none;
     }
