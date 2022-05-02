@@ -6,20 +6,28 @@ const burguer = document.querySelector(".burguer");
 const menu = document.querySelectorAll(".menuli");
 const sidedown1 = document.getElementById("loc");
 const sidedown2 = document.getElementById("message");
-const menuOver = document.getElementById("menuover");
-let burguerOn = false;
+const menuOver = document.querySelector("#menuover");
+let isMenuDisplayed = false;
 
 //burguer
 
-burguer.addEventListener('click',()=>{
-    if (burguerOn == false){
-    menuOver.style.display = "flex";
-    burguerOn = true;
+function displayMenu(){
+    if (isMenuDisplayed == false){
+        menuOver.style.display = "flex";
     } else {
         menuOver.style.display = "none";
-        burguerOn = false;
     }
-})
+    isMenuDisplayed = !isMenuDisplayed;
+}
+
+function menuOff(){
+    menuOver.style.display = "none";
+    isMenuDisplayed = false;
+}
+burguer.addEventListener('click', displayMenu);
+menuOver.addEventListener('click', menuOff);
+
+
 
 
 //carroussel

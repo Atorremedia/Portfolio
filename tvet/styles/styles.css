@@ -176,11 +176,12 @@ a.activelang {
   border-radius: 3px;
 }
 #menuover {
-  background-color: #443742;
+  background-color:rgba(240, 248, 255, .4);
   position: absolute;
   top: 100px;
   right: 0;
-  width: 400px;
+  left: 0;
+  bottom: 0;
   display: none;
   flex-direction: column;
 }
@@ -212,7 +213,6 @@ a.activelang {
   text-align: center;
   margin-top: 5px;
 }
-
 .carrousel {
   width: 100%;
   height: 420px;
@@ -227,7 +227,6 @@ a.activelang {
   justify-content: flex-start;
   align-items: center;
 }
-
 .big {
   height: 380px;
   border-radius: 25px;
@@ -664,12 +663,15 @@ footer {
     .menu {
       display: none;
     }
+    .square {
+      display: none;
+    }
     .article-column {
         width: 100%;
     }
     .container-grid {
       grid-template-columns: 1fr;
-  }
+    }
     .burguer {
       display: 	flex;
     }
