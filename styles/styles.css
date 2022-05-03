@@ -801,13 +801,13 @@ svg.active .svg2-elem-14 {
     margin: auto;
     }
     .layer1 {
-        row-gap: 25vw;
+        row-gap: 35vw;
     }
     .layer2 {
-        row-gap: 15vw;
+        row-gap: 25vw;
     }
     .layer3 {
-        row-gap: 20vw;
+        row-gap: 40vw;
     }
 }
 @media (min-width: 1000px) {
