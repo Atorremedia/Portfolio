@@ -799,7 +799,16 @@ svg.active .svg2-elem-14 {
 @media (max-width: 1000px) {
   .card-right {
     margin: auto;
-}
+    }
+    .layer1 {
+        row-gap: 25vw;
+    }
+    .layer2 {
+        row-gap: 15vw;
+    }
+    .layer3 {
+        row-gap: 20vw;
+    }
 }
 @media (min-width: 1000px) {
     .burguer-container {
