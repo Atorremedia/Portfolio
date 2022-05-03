@@ -796,12 +796,12 @@ svg.active .svg2-elem-14 {
         top: 70px;
     }
   }
-@media (max-width: 1500px) {
+@media (max-width: 1000px) {
   .card-right {
     margin: auto;
 }
 }
-@media (min-width: 1500px) {
+@media (min-width: 1000px) {
     .burguer-container {
       display: none;
     }
