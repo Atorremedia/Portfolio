@@ -271,6 +271,7 @@ a.activelang {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  text-align: center;
   margin: 30px;
   padding: 20px;
   background-color: rgba(10, 10, 10, 0.5);
@@ -301,17 +302,16 @@ a.activelang {
   color: white;
 }
 #sq1 {
-  text-align: center;
   width: 170px;
   height: 135px;
 }
 #sq2 {
   width: 250px;
-  height: 80px;
+  height: 135px;
 }
 #sq3 {
   width: 300px;
-  height: 200px;
+  height: 135px;
 }
 .dotslist {
   width: 100px;

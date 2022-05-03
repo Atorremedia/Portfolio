@@ -4,8 +4,6 @@ const logopic = document.querySelector(".logodiv");
 const navside = document.querySelector(".navside");
 const burguer = document.querySelector(".burguer");
 const menubar = document.querySelector(".menu");
-const sidedown1 = document.querySelector(".loc");
-const sidedown2 = document.querySelector(".message");
 const menuOver = document.getElementById("menuover");
 const menu = document.querySelectorAll(".menuli");
 let isMenuDisplayed = false;
@@ -32,20 +30,19 @@ menubar.addEventListener('click', menuOff);
 //carroussel
 
 const big = document.querySelector(".big");
-const dot = document.querySelectorAll(".dot");
-dot.forEach(( cadadot, i )=>{
-    dot[i].addEventListener('click', ()=>{
+const dots = document.querySelectorAll(".dot");
+dots.forEach(( dot, i )=>{
+    dots[i].addEventListener('click', ()=>{
         let position = i;
         let operation = position * -33.33;
         big.style.transform = `translateX(${operation}%)`;
 
-        dot.forEach (( cadadot, i) =>{
-            dot[i].classList.remove('active');
+        dots.forEach (( dot, i) =>{
+            dots[i].classList.remove('active');
         });
-        dot[i].classList.add('active');
+        dots[i].classList.add('active');
 
     });
-
 });
 
 //scroll
