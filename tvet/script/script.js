@@ -4,8 +4,8 @@ const logopic = document.querySelector(".logodiv");
 const navside = document.querySelector(".navside");
 const burguer = document.querySelector(".burguer");
 const menubar = document.querySelector(".menu");
-const sidedown1 = document.getElementById("loc");
-const sidedown2 = document.getElementById("message");
+const sidedown1 = document.querySelector(".loc");
+const sidedown2 = document.querySelector(".message");
 const menuOver = document.getElementById("menuover");
 const menu = document.querySelectorAll(".menuli");
 let isMenuDisplayed = false;
@@ -49,14 +49,12 @@ dot.forEach(( cadadot, i )=>{
 });
 
 //scroll
-
+let body = document.body,
+    html = document.documentElement;
+    let height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
 window.addEventListener('scroll', ()=>{
 
     const scroll = window.pageYOffset;
-    if (scroll <= 550){
-        sidedown1.classList.remove('sidedown1');
-        sidedown2.classList.remove('sidedown2');
-    }
     if (scroll > 20){
         logopic.classList.add('logodown');
         navside.classList.add('teldown');
@@ -64,10 +62,6 @@ window.addEventListener('scroll', ()=>{
         for (let i = 0; i < menu.length; i++){
             menu[i].classList.add('menudown');
             }
-        if (scroll >550){
-            sidedown1.classList.add('sidedown1');
-            sidedown2.classList.add('sidedown2');
-        }
     } else {
         logopic.classList.remove('logodown');
         navside.classList.remove('teldown');
@@ -75,7 +69,6 @@ window.addEventListener('scroll', ()=>{
         for (let i = 0; i < menu.length; i++){
             menu[i].classList.remove('menudown');
         }
-
     }
 })
 

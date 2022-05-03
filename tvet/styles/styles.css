@@ -382,24 +382,28 @@ h1 {
   right: 0;
   transition: all 0.5s ease;
 }
-.sidedown1 {
-  transition: none;
+/* .sidedown1 {
   position: absolute;
-  right: -110px;
-  top: 1050px;
+  bottom: 180px;
+  height: 80px;
+  bottom: 50px;
+  transition: all 0.5s ease;
   margin: 0;
+  background-color: #2a4f70;
 }
 .sidedown2 {
-  transition: none;
   position: absolute;
-  right: -110px;
-  top: 1165px;
+  bottom: 135px;
+  height: 20px;
+  background-color: #057032;
+  bottom: 150px;
+  transition: all 0.5s ease;
   margin: 0;
-}
+} */
 .hidden {
   display: none;
 }
-#loc {
+.loc {
   bottom: 80px;
   height: 80px;
   background-color: #057032;
@@ -409,7 +413,7 @@ h1 {
   height: 80px;
   background-color: #057032;
 }
-#message {
+.message {
   bottom: 35px;
   height: 20px;
   background-color: #2a4f70;
