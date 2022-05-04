@@ -184,6 +184,7 @@ a.activelang {
   bottom: 0;
   display: none;
   flex-direction: column;
+  z-index: 25;
 }
 .menuli-over {
   height: 70px;
