@@ -80,14 +80,10 @@ function start() {  // hides settings screen, collects settings data and initial
     : subjlist[1].checked
     ? (subj = 17)
     : subjlist[2].checked
-    ? (subj = 19)
-    : subjlist[3].checked
     ? (subj = 18)
-    : subjlist[4].checked
+    : subjlist[3].checked
     ? (subj = 23)
-    : subjlist[5].checked
-    ? (subj = 20)
-    : subjlist[6].checked
+    : subjlist[4].checked
     ? (subj = 22)
     : (subj = 9)
 
@@ -95,7 +91,7 @@ function start() {  // hides settings screen, collects settings data and initial
       ? (difficulty = 'easy')
       : difficulty[1].checked
       ? (difficulty = 'medium')
-      : (difficulty = 'hard');
+      : (difficulty = 'hard')
 
     getbounce[0].checked
      ? (setBounce = true)
@@ -177,10 +173,9 @@ console.log (player1Score*10);
     let player2RateBar= document.getElementById('player2-rate-progress');
     player1RateBar.setAttribute('value', Math.floor(player1Score*100/player1TotalQuestions));
     player2RateBar.setAttribute('value', Math.floor(player2Score*100/player2TotalQuestions));
-
 }
 
-  async function getQuestions() {
+async function getQuestions() {
     
   if (onBounce == false) {                          // when bouncing the question is not changed, so the other player can have a chance.
     questionNum++;
@@ -210,6 +205,18 @@ console.log (player1Score*10);
     console.log(data);
     }
   //display question
+  let backgroundImages = {
+    27: 'url(img/animal.jpg)',
+    17: 'url(img/science.jpg)',
+    19: 'url(img/math.jpg)',
+    18: 'url(img/computer.jpg)',
+    23: 'url(img/history.jpg)',
+    20: 'url(img/mithology.jpg)',
+    22: 'url(img/geography.jpg)',
+    9: 'url(img/any.jpg)'
+  }
+  let background = document.getElementById('background');
+  background.style.backgroundImage = backgroundImages[subj];
   questionText.innerText = data.results[questionNum-1].question;
     if (!onBounce){
     randomIndex = Math.floor(Math.random()*(4));
@@ -293,8 +300,7 @@ function finish() {  // shows the final scores on another over-screen.
     winnerScore = player1Score;
   }
   winner.innerText = winnerPlayer + ' won.';
-  winnerData.innerText = 'Points: '+ winnerScore;
-
+  winnerData.innerText = 'Points: '+ winnerScore + '. Rate: ' + Math.floor(player1Score*100/player1TotalQuestions) + '%';
 
   return;
 }
