@@ -5,7 +5,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" type="text/css" href="estils_proves.css">
 	<title></title>
 </head>
 <body>
@@ -37,7 +37,7 @@
 						<h3>Player 2 name</h3>
 						<input class="text-input" type="text" placeholder="Player2" id="player2" value="Player2" spellcheck="false">
 					</div>
-					<div class="column">
+					<div class="column question-number">
 						<h3>Number of questions</h3>
 						<input type="radio" id="tenQuestions" name="questionsNum" value=10>
 						<label for="tenQuestions">10 questions</label>
@@ -46,15 +46,15 @@
 						<input type="radio" id="fiftyQuestions" name="questionsNum" value=50>
 						<label for="fiftyQuestions">50 questions</label>	
 					</div>
-					<div class="column">
-						<h3>Time for question</h3>
+					<!-- <div class="column"> -->
+						<!-- <h3>Time for question</h3>
 						<input type="radio" id="twelveSecs" name="time" value=1>
 						<label for="twelveSecs">12 seconds</label>
 						<input type="radio" id="fifteenveSecs" name="time" value=2 checked>
 						<label for="fifteenSecs">15 seconds</label>		
 						<input type="radio" id="twenySecs" name="time" value=2>
-						<label for="twentySecs">20 seconds</label>		
-					</div>		
+						<label for="twentySecs">20 seconds</label>		 -->
+					<!-- </div>		 -->
 					<div class="column subject">	
 						<h3>Subject</h3>
 						<input type="radio" name="subjects" id="animals">
@@ -87,81 +87,91 @@
 						<label for="any">Any</label>
 					</div>
 					<div class="column">
-						<h3>Bounce (ask the other player missed questions)</h3>
+						<h3>Bounce</h3>
 						<input type="radio" id="bounceYes" name="bounce" value=2 checked>
 						<label for="bounceYes">ON</label>		
 						<input type="radio" id="bounceNo" name="bounce" value=2>
 						<label for="bounceNo">OFF</label>
 			</div>
 
-				<a href="#">
-					<div class="button">
+				<a href="#"  class="button">
+					<div>
 						PLAY!
 					</div>
 				</a>
 			</form>
 		</div>
 	</div>
+	<div id="final">
+		<div class="finalbox">
+			<h2 class="final-title">Congratulations!!</h2>
+			<h3 id="winner"></h3>
+			<h4 id="winner-data"></h4>
+
+		</div>
+	</div>
 		<div class="container">
-			<h1 class="title-player">Player 1, Pepito de los Palotes</h1>
+			<div id="titles">
+				<h1 id="titleplayer">Player #1, Player1</h1>
+				<h2 id="titlebounce">Rebounce!</h2>
+			</div>
 			<div class="card">
 				<div class="card-top">
-					<h2 class="question-title">Question #15 of 20, COMPUTER SCIENCE</h2>
+					<h2 id="questiontitle">Question #15 of 20, COMPUTER SCIENCE</h2>
 				</div>
 				<div class="question-container">
 					<div class="question-form">
-						<h3>Wich is the tallest animal?</h3>
-						<div class="resposta">
-							<input type="radio" id="giraffe" name="answer" value="giraffe">
-							<label for="giraffe">The giraffe</label>
+						<h3 id="question-text">Wich is the tallest animal?</h3>
+						<div class="answer">
+							<input type="radio" id="radio1" name="radio" value="answer1">
+							<label for="radio1" id="answer1">The giraffe</label>
 						</div>
-						<div class="resposta">
-							<input type="radio" id="elephant" name="answer" value="elephant">
-							<label for="elephant">The elephant</label>
+						<div class="answer">
+							<input type="radio" id="radio2" name="radio" value="answer2">
+							<label for="radio2" id="answer2">The elephant</label>
 						</div>
-						<div class="resposta">
-							<input type="radio" id="kangaroo" name="answer" value="kangaroo">
-							<label for="kangaroo">The kangaroo</label>
+						<div class="answer">
+							<input type="radio" id="radio3" name="radio" value="answer3">
+							<label for="radio3" id="answer3">The kangaroo</label>
 						</div>
-						<div class="resposta">
-							<input type="radio" id="whale" name="answer" value="whale">
-							<label for="whale">The white whale</label>
+						<div class="answer">
+							<input type="radio" id="radio4" name="radio" value="answer4">
+							<label for="radio4" id="answer4">The blue whale</label>
 						</div>
 						<div>
-							<input type="submit" class="submit">
+							<div class="submit" onclick="play()">
+								<p class="submit-tag">Submit</p>
+							</div>
 						</div>
 					</div>
-					<div class="time-container">
-						<div class="timer timer4"></div>
-						<div class="timer timer1"></div>
-						<div class="timer timer3"></div>
-						<div class="timer timer2"></div>
+					<div class="display-container">
+						
 					</div>
 				</div>
 				<div class="bottom">
 					<div class="bottom1">
 						<div class="player-rate player1-rate">
-							<h3 class="player-name player1-name">Player 1, Pepito</h3>
+							<h3 class="player-name" id="player1name">Player 1, Pepito</h3>
 							<div class="player-container">
-								<label for="player1-rate-progress">7/10</label>
-								<progress id="player1-rate-progress" value="70" max="100">70 %</progress>
+								<label for="player1-rate-progress" id="player1-rate">0/0</label>
+								<progress id="player1-rate-progress" value="0" max="100">100 %</progress>
 							</div>
 						</div>
 						<div class="player-score player1-score">
-							<p class="player-score-number player1-score-number">5</p>
+							<p class="player-score-number" id="player1-score-number">0</p>
 							<p class="player-score-units player1-score-units">points</p>
 						</div>
 					</div>
 					<div class="bottom2">
 						<div class="player-score player2-score">
-							<p class="player-score-number player2-score-number">15</p>
+							<p class="player-score-number" id="player2-score-number">0</p>
 							<p class="player-score-units player2-score-units">points</p>
 						</div>
 						<div class="player-rate player2-rate">
-							<h3 class="player-name player2-name">Player 2, Juanito</h3>
+							<h3 class="player-name" id="player2name">Player 2, Juanito</h3>
 							<div class="player-container">
-							<progress id="player2-rate-progress" value="70" max="100">70 %</progress>
-							<label for="player2-rate-progress">7/10</label>
+							<progress id="player2-rate-progress" value="0" max="100">100 %</progress>
+							<label for="player2-rate-progress" id="player2-rate">0/0</label>
 						</div>
 						</div>
 					</div>
@@ -170,6 +180,6 @@
 			</div>
 		</div>
 	
-<script src="quizscript.js"></script>
+<script src="quiz.js"></script>
 </body>
 </html>
