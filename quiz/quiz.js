@@ -87,7 +87,9 @@ function start() {  // hides settings screen, collects settings data and initial
     ? (subj = 23)
     : subjlist[5].checked
     ? (subj = 20)
-    : (subj = 22)
+    : subjlist[6].checked
+    ? (subj = 22)
+    : (subj = 9)
 
     difficulty[0].checked
       ? (difficulty = 'easy')
