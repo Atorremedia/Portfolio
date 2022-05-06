@@ -36,6 +36,7 @@ let player1TotalQuestions = 1;
 let player2TotalQuestions = 0;
 let player2Score = 0;
 let winnerPlayer = player1;
+let winnerScore = 0;
 
 
 //------------------------------------------------------------------------------------------
@@ -284,11 +285,13 @@ function finish() {  // shows the final scores on another over-screen.
   let winnerData = document.getElementById('winner-data');
   if (player2Score>player1Score){
     winnerPlayer = player2;
+    winnerScore = player2Score;
   } else if (player2Score == player1Score){
-    winnerPlayer = player1
+    winnerPlayer = player1;
+    winnerScore = player1Score;
   }
   winner.innerText = winnerPlayer + ' won.';
-  winnerData.innerText = 'Points: '+ player1Score;
+  winnerData.innerText = 'Points: '+ winnerScore;
 
 
   return;
