@@ -252,14 +252,6 @@ function displayScreen() {
     questiontitle.style.color = "black";
     titleplayer.style.color = "black";
   }
-
-  // display question
-
-
-
-// display points
-// display rate
-// display progress bar
 }
 
 // set whose torn it is.
@@ -276,7 +268,7 @@ function setTorn() {
   }
 }
 
-function bouncing() {
+function bouncing() {   //shows same question to the other player
   onBounce = !onBounce;
 
   // display bounce
@@ -284,8 +276,7 @@ function bouncing() {
   titleBounce.style.display = "flex";
 }
 
-function finish() {
-  // shows the final scores on another over-screen.
+function finish() {  // shows the final scores on another over-screen.
   console.log("Done.");
 
   document.getElementById("final").style.display = "flex";
