@@ -125,6 +125,7 @@ function play() {
     getQuestions();
     displayScreen();
     if (players == 2 && onBounce == false) {
+      torn = setTorn();
     }
   }
 }
@@ -147,17 +148,15 @@ function getAnswer() {
   } else {
     points = 0;
     showwrong();
+    if (setBounce && players ==2){
+      bouncing();
+    }
     }
   
-  // score(currentPlayer, points); // actualizes scores and rates.
-  torn = setTorn(); // calls function that determines whose torn it is.
+  score(currentPlayer, points); // actualizes scores and rates.
 }
 
 function score(currentPlayer, points) {
-
-  // document.getElementById("correct").style.display = "none";
-  // document.getElementById("wrong").style.display = "none";
-
 
     if (torn ==1){ player1Score= player1Score + points}
     else { player2Score = player2Score + points}
@@ -278,23 +277,17 @@ function showright(){
   document.getElementById("correct").style.display = "flex";
   document.getElementById("correctanswer").style.visibility = "hidden";
   document.getElementById("righttext").style.visibility = "hidden";
-  score(currentPlayer, points);
 }
 function showwrong(){
   document.getElementById("correct").style.display = "none";
   document.getElementById("wrong").style.display = "flex";
-  setTimeout(score(currentPlayer, points), 5000);
-  if (setBounce && players ==2){
-    bouncing();
-}
+
 if (!onBounce) {
   document.getElementById("correctanswer").style.visibility = "visible";
   document.getElementById("righttext").style.visibility = "visible";
   document.getElementById("righttext").innerText = correctAnswer;
 }
 }
-
-
 function bouncing() {   //shows same question to the other player
   onBounce = !onBounce;
 
