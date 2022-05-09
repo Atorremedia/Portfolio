@@ -35,8 +35,12 @@ let player1Score = 0;
 let player1TotalQuestions = 1;
 let player2TotalQuestions = 0;
 let player2Score = 0;
-let winnerPlayer = player1;
+let winnerPlayer = 0;
 let winnerScore = 0;
+let winnerTotalQuestions = 0;
+let looserPlayer = 0;
+let looserScore = 0;
+let looserTotalQuestions = 0;
 
 
 //------------------------------------------------------------------------------------------
@@ -108,7 +112,6 @@ function start() {  // hides settings screen, collects settings data and initial
       currentPlayer: currentPlayer,
       onBounce: onBounce
     }
-    console.log(game);
     play();
   });
 }
@@ -117,7 +120,7 @@ function play() {
 
   if (questionNum <= totalQuestions) {
     if (questionNum > 0) {
-      getAnswer(); // compares given answer with the correct one. If wrong, it bounces (it gives a chance to the other player on the same question.)
+      getAnswer(); // compares given answer with the correct one. If wrong, it bounces.
     }
     getQuestions();
     displayScreen();
@@ -126,6 +129,9 @@ function play() {
   }
 }
 function getAnswer() {
+  let checkCorrect = document.getElementById(checkcorrect);
+  let correctAnswer = document.getElementById(correctanswer);
+
   answer[0].checked
     ? (chosenAnswer = 0)
     : answer[1].checked
@@ -136,27 +142,25 @@ function getAnswer() {
 
   if (chosenAnswer == randomIndex){
     points = 1;
-    console.log('correct!');
     onBounce = false;
+    showright();
   } else {
     points = 0;
-    console.log('incorrect!');
-    if (setBounce && players ==2){
-    bouncing();
+    showwrong();
     }
-  }
-  score(currentPlayer, points); // actualizes scores and rates.
+  
+  // score(currentPlayer, points); // actualizes scores and rates.
   torn = setTorn(); // calls function that determines whose torn it is.
 }
 
 function score(currentPlayer, points) {
 
+  // document.getElementById("correct").style.display = "none";
+  // document.getElementById("wrong").style.display = "none";
+
+
     if (torn ==1){ player1Score= player1Score + points}
     else { player2Score = player2Score + points}
-
-    console.log ('player1 score = ' + player1Score);
-    console.log ('Player2 score = ' + player2Score);
-
 
     let player1ScoreNumber = document.getElementById('player1-score-number');
     let player2ScoreNumber = document.getElementById('player2-score-number');
@@ -166,8 +170,6 @@ function score(currentPlayer, points) {
     let player2RateProgress = document.getElementById('player2-rate');
     player1RateProgress.innerText = player1Score + '/'+ player1TotalQuestions;
     player2RateProgress.innerText = player2Score + '/'+ player2TotalQuestions;
-
-console.log (player1Score*10);
 
     let player1RateBar = document.getElementById('player1-rate-progress');
     let player2RateBar= document.getElementById('player2-rate-progress');
@@ -181,7 +183,7 @@ async function getQuestions() {
     questionNum++;
   }
   if (questionNum >= totalQuestions) {
-    finish();
+    setTimeout(finish(), 1500);
     return;
   }
     if (!gotQuestions){
@@ -200,9 +202,6 @@ async function getQuestions() {
 
     data = await response.json();
     gotQuestions = true;
-    console.log('https://opentdb.com/api.php?amount=' + game.totalQuestions + '&category=' + subj + '&difficulty=' + game.difficulty + '&type=multiple');
-    console.log('got questions(' + game.totalQuestions + '?');
-    console.log(data);
     }
   //display question
   let backgroundImages = {
@@ -230,10 +229,8 @@ async function getQuestions() {
     }
   }
 
-
 // display player, number of question, total of questions, and difficulty.
 function displayScreen() {
-
 
   // set active player
   let titleplayer = document.getElementById("titleplayer");
@@ -263,7 +260,6 @@ function displayScreen() {
     titleplayer.style.color = "black";
   }
 }
-
 // set whose torn it is.
 function setTorn() {
   if (torn == 1) {
@@ -277,6 +273,27 @@ function setTorn() {
     return 1;
   }
 }
+function showright(){
+  document.getElementById("wrong").style.display = "none";
+  document.getElementById("correct").style.display = "flex";
+  document.getElementById("correctanswer").style.visibility = "hidden";
+  document.getElementById("righttext").style.visibility = "hidden";
+  score(currentPlayer, points);
+}
+function showwrong(){
+  document.getElementById("correct").style.display = "none";
+  document.getElementById("wrong").style.display = "flex";
+  setTimeout(score(currentPlayer, points), 5000);
+  if (setBounce && players ==2){
+    bouncing();
+}
+if (!onBounce) {
+  document.getElementById("correctanswer").style.visibility = "visible";
+  document.getElementById("righttext").style.visibility = "visible";
+  document.getElementById("righttext").innerText = correctAnswer;
+}
+}
+
 
 function bouncing() {   //shows same question to the other player
   onBounce = !onBounce;
@@ -287,20 +304,32 @@ function bouncing() {   //shows same question to the other player
 }
 
 function finish() {  // shows the final scores on another over-screen.
-  console.log("Done.");
 
   document.getElementById("final").style.display = "flex";
   let winner = document.getElementById('winner');
   let winnerData = document.getElementById('winner-data');
+  let looserData = document.getElementById('looser-data');
   if (player2Score>player1Score){
     winnerPlayer = player2;
+    looserPlayer = player1;
     winnerScore = player2Score;
-  } else if (player2Score == player1Score){
+    looserScore = player1Score;
+    winnerTotalQuestions = player2TotalQuestions;
+    looserTotalQuestions = player1TotalQuestions;
+  } else if (player1Score>player2Score){
     winnerPlayer = player1;
+    looserPlayer = player2;
     winnerScore = player1Score;
+    looserScore = player2Score;
+    winnerTotalQuestions = player1TotalQuestions;
+    looserTotalQuestions = player2TotalQuestions;
+
+
   }
   winner.innerText = winnerPlayer + ' won.';
-  winnerData.innerText = 'Points: '+ winnerScore + '. Rate: ' + Math.floor(player1Score*100/player1TotalQuestions) + '%';
+  winnerData.innerText = 'Points: '+ winnerScore + '. Rate: ' + Math.floor(winnerScore*100/winnerTotalQuestions) + '%';
+  looser.innerText = looserPlayer + ':';
+  looserData.innerText = 'Points: '+ looserScore + '. Rate: ' + Math.floor(looserScore*100/looserTotalQuestions) + '%';
 
   return;
 }

@@ -58,9 +58,7 @@
 						<label for="history">History</label>
 						<input type="radio" name="subjects" id="Geography">
 						<label for="Geography">Geography</label>
-						<br>
-						<input type="radio" name="subjects" id="all" checked>
-						<label for="all">Miscellanea (all subjects above plus many more!)</label>
+
 					</div>
 					<div class="column">
 						<h3>Difficulty of the questions</h3>
@@ -91,6 +89,8 @@
 			<h2 class="final-title">Congratulations!!</h2>
 			<h3 id="winner"></h3>
 			<h4 id="winner-data"></h4>
+			<h3 id="looser"></h3>
+			<h4 id="looser-data"></h4>
 
 		</div>
 	</div>
@@ -129,7 +129,12 @@
 						</div>
 					</div>
 					<div class="display-container">
-						
+						<div id="checkcorrect">
+							<img id= "correct" src="./img/right.png" alt="Correct!">
+							<img id= "wrong" src="./img/wrong.png" alt="Wrong!">
+						</div>
+						<div id="correctanswer">Correct answer:</div>
+						<div id="righttext">Jiraffe</div>
 					</div>
 				</div>
 				<div class="bottom">
