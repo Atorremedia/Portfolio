@@ -237,8 +237,6 @@ input {
   font-weight: 800;
   visibility: hidden;
 }
-
-
 .submit {
   margin: 20px 0;
   width: 15%;
@@ -249,6 +247,9 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.submit:hover {
+  cursor: pointer;
 }
 .bottom {
   display: flex;
@@ -361,6 +362,13 @@ input {
 }
 #winner-data {
   font-size: 2em;
+}
+#reloadbutton {
+  width: 100px;
+  height: 50px;
+  background-color: darkblue;
+  color: white;
+  font-weight: 800;
 }
 @media (max-width: 1000px) {
   .question-container {

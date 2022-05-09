@@ -120,7 +120,7 @@ function play() {
 
   if (questionNum <= totalQuestions) {
     if (questionNum > 0) {
-      getAnswer(); // compares given answer with the correct one. If wrong, it bounces.
+      getAnswer(); // compares given answer with the correct one.
     }
     getQuestions();
     displayScreen();
@@ -152,7 +152,6 @@ function getAnswer() {
       bouncing();
     }
     }
-  
   score(currentPlayer, points); // actualizes scores and rates.
 }
 
@@ -282,7 +281,7 @@ function showwrong(){
   document.getElementById("correct").style.display = "none";
   document.getElementById("wrong").style.display = "flex";
 
-if (!onBounce) {
+if (onBounce) {
   document.getElementById("correctanswer").style.visibility = "visible";
   document.getElementById("righttext").style.visibility = "visible";
   document.getElementById("righttext").innerText = correctAnswer;
@@ -325,5 +324,6 @@ function finish() {  // shows the final scores on another over-screen.
   looser.innerText = looserPlayer + ':';
   looserData.innerText = 'Points: '+ looserScore + '. Rate: ' + Math.floor(looserScore*100/looserTotalQuestions) + '%';
 
-  return;
+  let reloadButton = document.getElementById(reloadbutton);
+  reloadButton.addEventListener("click", ()=>document.location.reload(true));
 }
