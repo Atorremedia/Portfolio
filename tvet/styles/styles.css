@@ -627,6 +627,7 @@ footer {
   color: white;
 }
 .container-grid {
+  margin-top: 50px;
   margin-left: 10vw;
   display: grid;
   width: 80%;
