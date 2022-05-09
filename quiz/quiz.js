@@ -309,7 +309,10 @@ function finish() {  // shows the final scores on another over-screen.
   let winner = document.getElementById('winner');
   let winnerData = document.getElementById('winner-data');
   let looserData = document.getElementById('looser-data');
-  if (player2Score>player1Score){
+  if (player2Score == player1Score){
+    winner.innerText = 'There is a draw!!'
+    return;
+  } else if (player2Score>player1Score){
     winnerPlayer = player2;
     looserPlayer = player1;
     winnerScore = player2Score;
@@ -323,8 +326,6 @@ function finish() {  // shows the final scores on another over-screen.
     looserScore = player2Score;
     winnerTotalQuestions = player1TotalQuestions;
     looserTotalQuestions = player2TotalQuestions;
-
-
   }
   winner.innerText = winnerPlayer + ' won.';
   winnerData.innerText = 'Points: '+ winnerScore + '. Rate: ' + Math.floor(winnerScore*100/winnerTotalQuestions) + '%';
