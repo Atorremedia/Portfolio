@@ -1,3 +1,7 @@
+let layer1 = document.querySelector('.layer1');
+let layer2 = document.querySelector('.layer2');
+let layer3 = document.querySelector('.layer3');
+
 function scrollParallax(){
     let scrollTop = document.documentElement.scrollTop;
     layer1.style.transform = 'translateY('+ scrollTop * -.2 +'px)';

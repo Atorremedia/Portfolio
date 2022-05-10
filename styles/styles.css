@@ -315,6 +315,7 @@ footer {
     margin: auto;
 }
 .text-intro {
+    text-align: justify;
     width: 90%;
     margin: 10px auto 20px auto;
 }
@@ -325,6 +326,9 @@ footer {
     flex-direction: row;
     flex-wrap:nowrap;
     justify-content: center;
+}
+.report {
+    display: none;
 }
 .card-right {
     width: 350px;
