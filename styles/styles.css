@@ -367,6 +367,11 @@ background-image: url(img/portfolio.png);
 .react {
     background-image: url(img/logo-react.png);
 }
+.git {
+    height: 75px;
+    width: 75px;
+    background-image: url(img/git.png);
+}
 .photoshop {
     height: 70px;
     width: 70px;
@@ -523,7 +528,7 @@ background-image: url(img/portfolio.png);
     color: #07072c;
     background-color: #85f5fe;
 }
-.menu-desktop {
+.nav {
     height: 60px;
     display: flex;
     justify-content: space-around;
@@ -531,7 +536,7 @@ background-image: url(img/portfolio.png);
     align-items: center;
     margin: auto;
 }
-.menu-desktop__element {
+.nav__element {
     background-color: #07072c;
     height: 50px;
     width: 200px;
@@ -541,11 +546,11 @@ background-image: url(img/portfolio.png);
     color: #f0f8ff;
     font-size: 1.2em;
 }
-.menu-desktop__element:hover {
+.nav__element:hover {
     color: #07072c;
     background-color: #85f5fe;
 }
-.menu-desktop__anchor {
+.nav__anchor {
     text-decoration: none;
     font-weight: 800;
     height: 40px;
@@ -757,7 +762,7 @@ svg.active .svg2-elem-14 {
     stroke-dashoffset: 0;
 }
 @media (max-width: 1000px) {
-    .menu-desktop {
+    .nav {
       display: none;
     }
     side {
