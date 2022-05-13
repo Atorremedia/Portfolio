@@ -548,6 +548,19 @@ background-image: url(img/portfolio.png);
     font-weight: 800;
     height: 40px;
 }
+.arrow {
+    display: block;
+    height: 60px;
+    width: 150px;
+    background-image: url(/styles/img/arrow.gif);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0px;
+    right: 250px;
+    z-index:60;
+}
 svg .svg-elem-1 {
     fill: transparent;
     -webkit-transition: fill 0.4s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s;
@@ -810,6 +823,9 @@ svg.active .svg2-elem-14 {
     }
     .layer3 {
         row-gap: 40vw;
+    }
+    .arrow {
+        right: 150px;
     }
 }
 @media (min-width: 1000px) {
