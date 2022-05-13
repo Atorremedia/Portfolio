@@ -549,6 +549,7 @@ background-image: url(img/portfolio.png);
     height: 40px;
 }
 .arrow-container {
+    background-image: url(/styles/img/arrow.gif);
     display: block;
     height: 60px;
     width: 150px;
