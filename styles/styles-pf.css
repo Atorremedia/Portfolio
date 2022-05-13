@@ -827,7 +827,9 @@ svg.active .svg2-elem-14 {
     .layer3 {
         row-gap: 40vw;
     }
-    .arrow {
+    .arrow-container {
+        width: 15vw;
+        height: 25vw;
         right: 150px;
     }
 }
