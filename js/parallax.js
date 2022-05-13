@@ -1,7 +1,7 @@
 let layer1 = document.querySelector('.layer1');
 let layer2 = document.querySelector('.layer2');
 let layer3 = document.querySelector('.layer3');
-let arrow = document.querySelector('.arrow');
+let arrow = document.querySelector('.arrow-container');
 
 function scrollParallax(){
     let scrollTop = document.documentElement.scrollTop;
