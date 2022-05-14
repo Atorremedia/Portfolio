@@ -334,6 +334,7 @@ footer {
 }
 .card-right {
     width: 350px;
+    min-height: 200px;
     margin-left: auto;
     background-position: center;
     background-size: cover;
@@ -893,14 +894,8 @@ svg.active .svg2-elem-14 {
     .layer3 {
         top: 25vh;
     }
-
     .svg-container1 {
         top: 70px;
-    }
-  }
-@media (max-width: 1000px) {
-  .card-right {
-    margin: auto;
     }
     .layer1 {
         row-gap: 35vw;
@@ -915,6 +910,11 @@ svg.active .svg2-elem-14 {
         width: 15vw;
         height: 25vw;
         right: 150px;
+    }
+}
+@media (max-width: 1400px) {
+.card-right {
+    margin: auto;
     }
 }
 @media (min-width: 1000px) {
