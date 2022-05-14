@@ -18,8 +18,8 @@ burguer.addEventListener('click', displayMenu);
 
 function svgAnimate(){
     let scroll = document.documentElement.scrollTop;
-    if (scroll>180){svg[0].classList.add('active')}
+    if (scroll>120){svg[0].classList.add('active')}
     else {svg[0].classList.remove('active')}    
-    if (scroll>300){svg[1].classList.add('active')}
+    if (scroll>250){svg[1].classList.add('active')}
     else {svg[1].classList.remove('active')}    
 }
