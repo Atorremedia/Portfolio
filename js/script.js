@@ -1,4 +1,4 @@
-
+// Menu displays/hides when clicking burger and also hides when clichking on the menu itself.
 let photo = document.querySelector('.photo-container');
 let burguer = document.querySelector('.burguer-container');
 let menubar = document.querySelector('.menu');

@@ -358,7 +358,7 @@ h1 {
 }
 .article-column {
   font-size: 1.3rem;
-  width: 50%;
+  width: 45%;
   min-width: 300px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -383,24 +383,6 @@ h1 {
   right: 0;
   transition: all 0.5s ease;
 }
-/* .sidedown1 {
-  position: absolute;
-  bottom: 180px;
-  height: 80px;
-  bottom: 50px;
-  transition: all 0.5s ease;
-  margin: 0;
-  background-color: #2a4f70;
-}
-.sidedown2 {
-  position: absolute;
-  bottom: 135px;
-  height: 20px;
-  background-color: #057032;
-  bottom: 150px;
-  transition: all 0.5s ease;
-  margin: 0;
-} */
 .hidden {
   display: none;
 }
@@ -519,12 +501,12 @@ footer {
   text-align: end;
   padding: 0 15px 15px 0;
   display: flex;
-  font-size: smaller;
+  font-size: small;
   flex-direction: column-reverse;
   justify-content: space-between;
 }
 .about {
-  font-size: 10px;
+  font-size: small;
 }
 .xarxes {
   display: flex;
@@ -622,6 +604,10 @@ footer {
 .service h2 {
   color: #443742;
 }
+.service p {
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
 .webelement a {
   text-decoration: none;
   color: white;
@@ -655,6 +641,7 @@ footer {
 .image5 {
   background-image: url(../img/lab.jpg);
 }
+
 @media (max-width: 400px){
   .navside {
     display: none;
@@ -664,7 +651,6 @@ footer {
 
   }
 }
-
 @media (max-width: 1000px){
     .menu {
       display: none;
