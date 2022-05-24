@@ -553,7 +553,7 @@ background-image: url(img/portfolio.png);
     height: 100%;
 }
 .arrow-container {
-    background-image: url(/styles/img/arrow1.png);
+    background-image: url(img/arrow1.png);
     display: block;
     height: 40px;
     width: 100px;
@@ -901,8 +901,8 @@ svg.active .svg2-elem-14 {
         margin-right: 40px;
     }
     .arrow-container {
-        width: 15vw;
-        height: 25vw;
+        width: 40px;
+        height: 100px;
         right: 50px;
         bottom: 50px;
     }

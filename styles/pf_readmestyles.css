@@ -8,13 +8,13 @@ body {
     font-family: Montserrat, sans-serif;
 }
 .main-title {
-    margin: 120px 0 60px 120px;
+    margin: 120px 0 60px 12vw;
 }
 .title {
-    margin: 60px 0 10px 80px;
+    margin: 60px 0 10px 8vw;
 }
 .section {
-    margin: 10px 20vw 20px 100px;
+    margin: 10px 20vw 20px 10vw;
     padding: 5px;
     line-height: 2em;
 }
@@ -22,7 +22,7 @@ body {
     margin-left: 150px;
 }
 .subtitle {
-    margin: 50px 20px 10px 100px;
+    margin: 50px 20px 10px 10vw;
     padding: 5px;
 }
 .getcode {
@@ -44,9 +44,10 @@ body {
 .palette {
     display: inline-flex;
     flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
 }
 .palette__colour {
-    margin-top: 45px;
     height: 40px;
     width: 40px;
     border: 1px solid #424242
